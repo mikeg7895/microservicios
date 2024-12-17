@@ -1,0 +1,24 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://softwarearchitecture/project/logs"
+           targetNamespace="http://softwarearchitecture/project/logs" elementFormDefault="qualified">
+    <xs:element name="getLogsRequest">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getLogsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="logs" type="tns:logEntry" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="logEntry">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="mensaje" type="xs:string"/>
+            <xs:element name="fecha" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
